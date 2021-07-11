@@ -12,4 +12,12 @@ class Ruboxer < Formula
     bin.install "target/release/ruboxer"
     man8.install "ruboxer.8"
   end
+
+  def caveats
+    <<~EOS
+      Due to the use of chroot(2), ruboxer needs to be run as root except when displaying help or version information. However, you may encounter a "command not found" error when running ruboxer with sudo. Fix this by creating an appropriate symlink:
+
+      $ sudo ln -s #{bin}/ruboxer /usr/local/bin/ruboxer
+    EOS
+  end
 end
