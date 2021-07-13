@@ -17,7 +17,7 @@ class Ruboxer < Formula
     <<~EOS
       Due to the use of chroot(2), ruboxer needs to be run as root except when displaying help or version information. However, you may encounter a "command not found" error when running ruboxer with sudo. Fix this by creating an appropriate symlink:
 
-      $ sudo ln -s #{bin}/ruboxer /usr/local/bin/ruboxer
+      $ sudo ln -s $(which ruboxer) /usr/local/bin/ruboxer
     EOS
   end
 end
